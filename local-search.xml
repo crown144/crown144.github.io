@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2024/01/07/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
+    <url>/2024/01/07/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Pyqt5"><a href="#Pyqt5" class="headerlink" title="Pyqt5"></a>Pyqt5</h1><p>本文旨在将来回忆pyqt5的配置以及使用</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code class="hljs">pip install PyQt5pip install pyqt5-tools#安装过慢可用pip install PyQt5 -i https://pypi.douban.com/simple</code></pre><p>qt designer所在文件夹<br><code>**\Python\Lib\site-packages\qt5_applications\Qt\bin</code></p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>qt designer是一个托拽式的ui设计工具<br>设计完保存为一个.ui文件<br>使用pyuic5转化为.py文件<br><code>pyuic5 yourfile.ui -o yourfile.py</code><br>yourfile是保存的名字<br>再新建一个.py文件<br>引用的库：</p><pre><code class="hljs">from PyQt5 import QtCorefrom PyQt5.QtWidgets import QApplication,QMainWindow, QWidgetimport sysfrom window import Ui_MainWindow</code></pre><p>创建一个mywindow类，继承父类QMainWindow,Ui_MainWindow</p><pre><code class="hljs">class Mywindow(QMainWindow,Ui_MainWindow):    def __init__(self):        super().__init__()              #继承父类的初始化        self.setupUi(self)                      self.pushButton.clicked.connect(self.submit)        #按钮事件绑定        self.textEdit.append(&#39;请先登录&#39;)                    #文字框新增        self.textEdit.append(&#39;请输入用户名:&#39;)        def submit(self):        global username        global password        global Login        text = self.lineEdit.text()                     #获取文字框内容        if username == &#39;&#39;:            if text == &#39;&#39;:                self.textEdit.append(&#39;用户名为空,请重新输入:&#39;)            else:                self.textEdit.append(text)                        self.textEdit.append(text)</code></pre><p>主函数：</p><pre><code class="hljs">if __name__ == &#39;__main__&#39;:# 创建Qt应用程序对象app = QApplication(sys.argv)# 创建自定义窗口对象mywindow = Mywindow()# 显示窗口mywindow.show()# 运行应用程序的事件循环sys.exit(app.exec_())</code></pre>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2024/01/06/hello-world/"/>
+    <url>/2024/01/06/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
